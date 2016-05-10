@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="contactManagerApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="./bower_components/angular-material-icons/angular-material-icons.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="./assets/css/style.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body ng-cloak layout="row" ng-controller="mainController as vm">
+
+        <div ng-include="'dist/view/sidenav.html'" layout="vertical"></div>
+
+        <div layout="column" flex>
+            <div ng-include="'dist/view/toolbar.html'"></div>
+            <md-content flex id="content">
+                <div ng-include="'dist/view/maincontent.html'"></div>
+                <md-tabs selected="vm.tabIndex"
+                            md-dynamic-height=""
+                            md-stretch-tabs="always">                            >
+                    <md-tab label="Bio">
+                        <div ng-include="'dist/view/bio.html'"></div>
+                    </md-tab>
+                    <md-tab label="Notes">
+                        <div ng-include="'dist/view/notes.html'"></div>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+
+        <script src="./bower_components/angular/angular.min.js" charset="utf-8"></script>
+        <script src="./bower_components/angular-animate/angular-animate.min.js" charset="utf-8"></script>
+        <script src="./bower_components/angular-aria/angular-aria.min.js" charset="utf-8"></script>
+        <script src="./bower_components/angular-material/angular-material.min.js" charset="utf-8"></script>
+        <script src="./bower_components/angular-material-icons/angular-material-icons.min.js" charset="utf-8"></script>
+
+        <script src="./dist/models.js" charset="utf-8"></script>
+        <script src="./dist/services/userService.js" charset="utf-8"></script>
+        <script src="./dist/controllers/AddUserDialogController.js" charset="utf-8"></script>
+        <script src="./dist/controllers/mainController.js" charset="utf-8"></script>
+        <script src="./dist/boot.js" charset="utf-8"></script>
+    </body>
+</html>
