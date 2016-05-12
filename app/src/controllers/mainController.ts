@@ -59,7 +59,7 @@ module ContactManagerApp{
             }).then((user: User)=>{
                 self.openToast("User added");
             }, () => {
-                console.log('You cancelled the dialig.');
+                self.openToast('You cancelled the dialog.');
             });
         }
 

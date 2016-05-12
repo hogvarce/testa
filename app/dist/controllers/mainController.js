@@ -49,7 +49,7 @@ var ContactManagerApp;
             }).then(function (user) {
                 self.openToast("User added");
             }, function () {
-                console.log('You cancelled the dialig.');
+                self.openToast('You cancelled the dialog.');
             });
         };
         MainController.prototype.clearNotes = function ($event) {
